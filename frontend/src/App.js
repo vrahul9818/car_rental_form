@@ -28,15 +28,14 @@ const App = () => {
   const handleSubmit = async () => {
     const confirmationMessage = `Booking For: ${formData.dateRange.startDate} to ${formData.dateRange.endDate}. Do you want to confirm?`;
     
-    // Use window.confirm to ask for user confirmation
     const userConfirmed = window.confirm(confirmationMessage);
     
     if (userConfirmed) {
       try {
-        const returnData = await submitBookingData(formData); // Ensure to pass formData
+        const returnData = await submitBookingData(formData); 
         if (returnData) {
           alert("Your booking is submitted successfully!");
-          nextStep(); // Call your function to proceed to the next step
+          nextStep(); 
         }
       } catch (error) {
         alert("There was an error submitting your booking. Please try again."); 
