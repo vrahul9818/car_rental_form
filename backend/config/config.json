@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "vehicle_booking_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "vehicle_booking_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "sql12741568",
+    "password": "NYwAZdInfy",
+    "database": "sql12741568",
+    "host": "sql12.freesqldatabase.com",
+    "dialect": "mysql",
+    "port" :3306
+  }
+}
