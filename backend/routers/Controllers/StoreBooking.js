@@ -17,7 +17,7 @@ const StoreBooking = async(req,res)=>{
             startDate,
             endDate,
           });
-          console.log(booking)
+        //   console.log(booking)
           return res.status(201).json(booking);
 
 
@@ -48,7 +48,7 @@ const getAllBooking = async (req, res) => {
             return booking;
         });
 
-        console.log(bookingList);
+        // console.log(bookingList);
         return res.status(200).json(bookingList);
     } catch (error) {
         console.error('Error fetching bookings:', error.message);

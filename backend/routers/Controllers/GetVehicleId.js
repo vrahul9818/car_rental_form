@@ -8,11 +8,11 @@ const getVehicles = async (req, res) => {
 
     const start = new Date(startDate).toISOString().split('T')[0];
     const end = new Date(endDate).toISOString().split('T')[0];
-    console.log(start, end, "changed dates");
+    // console.log(start, end, "changed dates");
 
     const vehiclesQuery = 'SELECT * FROM Vehicles';
     const [vehicles] = await sequelize.query(vehiclesQuery);
-    console.log(vehicles, "vehicle");
+    // console.log(vehicles, "vehicle");
 
     const bookingsQuery = `
       SELECT * FROM Bookings
@@ -22,14 +22,14 @@ const getVehicles = async (req, res) => {
       replacements: { startDate: start, endDate: end }
     });
 
-    console.log(bookings, "booked vehicle details");
+    // console.log(bookings, "booked vehicle details");
 
     const bookedVehicleIds = bookings.map(booking => booking.vehicleId);
     console.log(bookedVehicleIds, "booking vehicle id");
 
     // Filter out vehicles that are booked
     let availableVehicles = vehicles.filter(vehicle => !bookedVehicleIds.includes(vehicle.id));
-    console.log(availableVehicles, "available");
+    // console.log(availableVehicles, "available");
 
     if (wheels) {
       const wheelsNumber = parseInt(wheels, 10);
