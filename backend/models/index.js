@@ -70,7 +70,7 @@ const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'production';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
-console.log(config);
+// console.log(config);
 let sequelize;
 if (process.env.DATABASE_URL) {
   sequelize = new Sequelize(process.env.DATABASE_URL, config);
