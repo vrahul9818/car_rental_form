@@ -14,7 +14,6 @@ const VehicleTypeStep = ({ nextStep, handleSubmit,prevStep, handleDataChange, fo
   const [selectedTypes, setSelectedTypes] = useState([]);
 
   useEffect(() => {
-    console.log(formData);
     const fetchVehicleTypes = async () => {
       try {
         const { wheels, dateRange } = formData;
@@ -40,8 +39,15 @@ const VehicleTypeStep = ({ nextStep, handleSubmit,prevStep, handleDataChange, fo
   const handleCardClick = (id) => {
     console.log(id);
     handleDataChange('id', id);
-    handleSubmit();
+ 
   };
+
+  useEffect(() => {
+    if (formData.id) {
+      handleSubmit();
+    }
+  }, [formData.id]);
+
 
   const vehicleOptions = formData.wheels === '2' ? ['Sports', 'Cruiser'] : ['SUV', 'Sedan', 'Hatchback'];
 

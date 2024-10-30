@@ -3,7 +3,7 @@ import { Typography, Button } from '@mui/material';
 import axios from 'axios';
 import '../components/css/NameStep.css';
 
-const BookingHistoryStep = ({ prevStep, formData }) => {
+const BookingHistoryStep = ({ prevStep, formData,restart }) => {
   const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -50,8 +50,8 @@ const BookingHistoryStep = ({ prevStep, formData }) => {
         <Typography>No booking history available.</Typography>
       )}
       <div className="button-container">
-        <Button variant="contained" color="primary" onClick={prevStep}>
-          Go Back
+        <Button variant="contained" color="primary" onClick={restart}>
+          Click to register again
         </Button>
       </div>
     </div>

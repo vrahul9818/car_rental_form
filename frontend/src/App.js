@@ -25,6 +25,16 @@ const App = () => {
     console.log(formData);
   };
 
+  const restart = () => {
+    setStep(1);
+    setFormData({
+      firstName: '',
+      lastName: '',
+      wheels: '',
+      id: '',
+      dateRange: { startDate: '', endDate: '' }
+    });
+  };
   const handleSubmit = async () => {
     const confirmationMessage = `Booking For: ${formData.dateRange.startDate} to ${formData.dateRange.endDate}. Do you want to confirm?`;
     
@@ -43,6 +53,7 @@ const App = () => {
       }
     } else {
       console.log("Booking not confirmed. Submission canceled.");
+      handleDataChange('id','')
     }
   };
   
@@ -64,7 +75,7 @@ const App = () => {
                 <VehicleTypeStep nextStep={nextStep}  handleSubmit={handleSubmit} prevStep={prevStep} handleDataChange={handleDataChange} formData={formData} />
       )}
       {step === 5 && ( 
-        <BookingHistoryStep handleSubmit={handleSubmit} prevStep={prevStep} handleDataChange={handleDataChange} formData={formData} />
+        <BookingHistoryStep handleSubmit={handleSubmit} prevStep={prevStep} handleDataChange={handleDataChange} formData={formData} restart ={restart} />
       )}
     </div>
   );
