@@ -1,3 +1,5 @@
+First clone this repository in Local system
+
 //FRONTEND
 
 For frontend this project is setup in REACT
