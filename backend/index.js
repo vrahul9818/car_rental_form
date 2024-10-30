@@ -5,10 +5,11 @@ const cors = require('cors');
 const { Sequelize } = require('sequelize');
 const { sequelize: db } = require('./models');
 const { up: seedVehicles } = require('./seeders/20241028213906-seed-vehicles');
-const DB_NAME = 'sql12741568';
 const PORT = process.env.PORT || 5050;
-
-let DATABASE_URL=`mysql://sql12741568:NYwAZdInfy@sql12.freesqldatabase.com:3306/sql12741568`;
+let DB_ARR = ['sql12741568','vehicle_booking_db']
+let DATABASE_URL_ARR = [`mysql://sql12741568:NYwAZdInfy@sql12.freesqldatabase.com:3306/sql12741568`,`mysql://root:@localhost:3306`]
+let DB_NAME = DB_ARR[0] ;
+let DATABASE_URL=DATABASE_URL_ARR[0];
 
 const rootSequelize = new Sequelize(DATABASE_URL, {
     logging: false,
