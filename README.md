@@ -1,13 +1,19 @@
 //FRONTEND
+
 For frontend this project is setup in REACT
+
 step to start:
 1-> cd car_rental_form
 2-> cd frontend
 3-> npm i 
 4-> npm start
 Frontend will start 
+
+
 //Backend
+
 For Backend this project is setup in Node and Express
+
 step to start:
 1-> cd car_rental_form
 2->cd backend
